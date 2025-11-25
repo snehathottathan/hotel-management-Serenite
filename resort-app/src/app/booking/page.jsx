@@ -28,7 +28,7 @@ export default function Booking() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:4001/api/v1/bookings-route/create-bookings",
+        "https://hotel-management-vqk2.onrender.com/api/v1/bookings-route/create-bookings",
         {
           method: "POST",
           headers: {

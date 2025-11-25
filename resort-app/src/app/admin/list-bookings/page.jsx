@@ -28,7 +28,7 @@ export default function ListBookings() {
   const listBooking = async (token) => {
     try {
       const res = await fetch(
-        "http://localhost:4001/api/v1/admin/bookings/list-bookings",
+        "https://hotel-management-vqk2.onrender.com/api/v1/admin/bookings/list-bookings",
         {
           headers: {
             Authorization: `Bearer ${token}`,
