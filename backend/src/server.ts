@@ -11,12 +11,14 @@ import bookingRoutes from "./routes/custom-routes/booking-routes";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://hotel-management-serenite-7kde.vercel.app"
+  ],
+  credentials: true
+}));
+
 
 app.use(express.json());
 app.use(cookieParser());
