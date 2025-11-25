@@ -1,0 +1,13 @@
+// Center content horizontally and vertically
+@mixin flex-center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// Common text style
+@mixin text-white-center {
+  color: white;
+  text-align: center;
+}

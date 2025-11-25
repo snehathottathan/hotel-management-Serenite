@@ -1,0 +1,164 @@
+// // table {
+// // //   width: 90%;
+// //   border-collapse: collapse;
+// //   font-family: Arial, sans-serif;
+// //   background: #ffffff;
+// //   border-radius: 10px;
+// //   overflow: hidden;
+// //   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+// // }
+
+// // th, td {
+// //   padding: 14px 18px;
+// //   text-align: left;
+// //   border-bottom: 1px solid #ddd;
+// // }
+
+
+// // .list-bookings{
+// //     display: flex;
+// //     padding: 27px;
+// //     justify-content: center;
+// // }
+
+// .list-bookings {
+//   display: flex;
+//   padding: 27px;
+//   justify-content: center;
+
+//   table {
+//     width: 100%;
+//     border-collapse: collapse;
+//     font-family: Arial, sans-serif;
+//     background: #ffffff;
+//     border-radius: 10px;
+//     overflow: hidden;
+//     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+//     min-width: 600px; // ensures horizontal scroll
+
+//     // fix for first column visibility
+//     table-layout: auto; 
+//   }
+
+//   th,
+//   td {
+//     padding: 14px 18px;
+//     text-align: left;
+//     border-bottom: 1px solid #ddd;
+//     white-space: nowrap; // prevent wrapping
+//   }
+
+//   @media (max-width: 768px) {
+//     padding: 15px;
+
+//     table {
+//       display: block;
+//       width: 100%;
+//       overflow-x: auto; // horizontal scroll
+//       -webkit-overflow-scrolling: touch;
+//     }
+
+//     th,
+//     td {
+//       padding: 10px 12px;
+//       font-size: 14px;
+//     }
+//   }
+
+//   @media (max-width: 480px) {
+//     th,
+//     td {
+//       padding: 8px 10px;
+//       font-size: 12px;
+//     }
+//   }
+// }
+// ListBookings.scss
+
+.list-bookings {
+  display: flex;
+  padding: 27px;
+  justify-content: center;
+  width: 100%; // Ensure the container takes full width
+
+  h1 {
+    font-size: 2em; // Adjust as needed
+    margin-bottom: 20px;
+    text-align: center; // Center the title
+  }
+
+  // Wrapper for the table to ensure horizontal scroll works correctly
+  // This will prevent the table from directly overflowing the .list-bookings container
+  & > div { // Targets the div directly inside .list-bookings that holds the h1 and table
+    width: 100%; // Ensure this div also takes full width
+    max-width: 100%; // Crucial: prevents content from pushing past parent
+    overflow-x: auto; // This is the key for horizontal scroll on smaller screens
+    -webkit-overflow-scrolling: touch; // Improves scroll experience on iOS
+  }
+
+  table {
+    width: 100%; // Table should always try to take 100% of its *scrollable container*
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    border-radius: 10px;
+    // overflow: hidden; // Keep this for border-radius on the table
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    // Remove min-width from table itself. The overflow-x: auto on the parent
+    // div handles the scroll when the table content is naturally wider than the screen.
+    // min-width: 600px;
+
+    // table-layout: fixed can be useful to control column widths more precisely,
+    // but combined with white-space: nowrap, it can make columns too wide.
+    // Let's stick with auto or unset unless you have specific width requirements for each column.
+    // table-layout: auto; // Or unset to let content dictate width
+  }
+
+  th,
+  td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; // Keeps content on a single line, enabling horizontal scroll
+    /* Example: if you want specific columns to be narrower */
+    /* &:nth-child(1) { width: 50px; } */
+  }
+
+  thead th {
+    background-color: #f2f2f2; // Light background for headers
+    position: sticky; // Keep header visible during vertical scroll
+    top: 0; // Stick to the top of the scrollable container
+    z-index: 1; // Ensure header is above scrolling content
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    padding: 15px; // Reduce padding for smaller screens
+
+    h1 {
+      font-size: 1.5em; // Make title smaller
+      margin-bottom: 15px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px; // Reduce padding in cells
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; // Even less padding
+
+    h1 {
+      font-size: 1.2em; // Smaller title
+    }
+
+    th,
+    td {
+      padding: 8px 10px; // Further reduce padding
+      font-size: 12px; // Smaller font size
+    }
+  }
+}

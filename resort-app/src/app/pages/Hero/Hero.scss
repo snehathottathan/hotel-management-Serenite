@@ -1,0 +1,76 @@
+@use "../../styles/mixins" as mixin;
+
+.hero-section {
+  @include mixin.flex-center; 
+  @include mixin.text-white-center;
+
+  height: 300px;
+  font-family: initial;
+
+  .head {
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 390px) and (max-width:844px) {
+    .head {
+      font-size: 30px;
+    }
+  }
+
+  .para {
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: 390px) and (max-width:844px) {
+      margin-top: -1px;
+      padding-bottom: 16px;
+      font-size: 15px;
+    }
+  }
+
+  .button {
+    background-color: #665c5c;
+    width: 143px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    transition: transform .2s;
+    margin: 0 auto;
+    cursor: pointer;
+
+    @media screen and (min-width: 390px) and (max-width:844px) {
+      width: 108px;
+    }
+  }
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.hero-section {
+  position: relative;
+  background-image: url('../../assets/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+
+  @media screen and (min-width: 390px) and (max-width:844px) {
+    height: 365px;
+  }
+
+  .header-ul {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+}

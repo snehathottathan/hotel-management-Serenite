@@ -1,0 +1,23 @@
+{
+  "name": "resort-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "bootstrap": "^5.3.8",
+    "formik": "^2.4.9",
+    "next": "16.0.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-icons": "^5.5.0",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1"
+  }
+}

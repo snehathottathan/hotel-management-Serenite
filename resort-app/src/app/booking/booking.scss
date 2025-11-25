@@ -1,0 +1,114 @@
+.bookings {
+  display: flex;
+
+  padding: 43px;
+
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+
+  h1{
+        font-family: auto;
+    font-size: 27px;
+  }
+  p{font-size: 14px;
+    padding-top: 8px;}
+  // width: 300;
+
+  @media screen and (min-width: 390px) and (max-width:844px) {
+    padding: 30px;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      font-size: 26px;
+      text-align: center;
+      font-family: auto;
+    }
+
+    p {
+      padding-top: 8px;
+      font-size: 12px;
+    }
+  }
+
+.bookings-sub{
+.button-login{
+  @media screen and (min-width: 390px) and (max-width:844px) {
+  display: flex;
+    justify-content: center;
+
+    width: 143px;
+  }
+}
+}
+
+  .booking-form {
+    height: 493px;
+    //  height: 409px;
+    width: 507px;
+    padding: 23px;
+
+    // padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 390px) and (max-width:844px) {
+      width: 322px;
+      height: 421px;
+    }
+  }
+
+  .form-content {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+  }
+
+  .input-form {
+
+    border: 1px solid gray;
+    border-radius: 4px;
+    height: 27px;
+    width: 272px;
+  }
+
+  .label-form {
+    font-family: emoji;
+    font-weight: 300;
+    font-size: 17px;
+
+    @media screen and (min-width: 390px) and (max-width:844px) {
+      font-size: 14px;
+    }
+  }
+
+  .form-button {
+    font-family: emoji;
+    font-size: 17px;
+    width: 255px;
+    background-color: #8cae8c;
+    height: 31px;
+    color: #fff;
+    cursor: pointer;
+    // background-color: #8a9a5b;
+    width: 338px;
+    background-color: #482a2a;
+    border: 0;
+    border-radius: 3px;
+    width: 361px;
+    height: 36px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 390px) and (max-width:844px) {
+      width: 281px;
+      height: 31px;
+      font-size: 14px;
+    }
+  }
+}
