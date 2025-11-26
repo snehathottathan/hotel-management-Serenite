@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body style={{backgroundColor:'black'}} className={`${geistSans.variable} ${geistMono.variable}`}>
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
